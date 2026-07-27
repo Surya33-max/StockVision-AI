@@ -1,0 +1,314 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="search-page">
+
+    <div class="container">
+
+        <!-- ==========================================
+                    Page Header
+        =========================================== -->
+
+        <div class="text-center mb-5">
+
+            <h1 class="page-title">
+
+                Search Stocks
+
+            </h1>
+
+            <p class="page-subtitle">
+
+                Find company information, market data, and historical trends.
+
+            </p>
+
+        </div>
+
+        <!-- ==========================================
+                    Search Box
+        =========================================== -->
+
+        <div class="search-card">
+
+            <form id="stock-search-form">
+
+                <div class="input-group input-group-lg">
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="stock-symbol"
+                        placeholder="Enter Stock Symbol (Example: AAPL, TSLA, MSFT, NVDA)"
+                        autocomplete="off">
+
+                    <button
+                        class="btn btn-success"
+                        type="submit">
+
+                        <i class="fas fa-search me-2"></i>
+
+                        Search
+
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div id="search-results" class="search-results-dropdown"></div>
+
+            <div class="popular-searches mt-4">
+
+                <span class="me-2">
+
+                    Popular:
+
+                </span>
+
+                <button class="btn btn-outline-success btn-sm quick-stock" data-symbol="AAPL">
+
+                    AAPL
+
+                </button>
+
+                <button class="btn btn-outline-success btn-sm quick-stock" data-symbol="MSFT">
+
+                    MSFT
+
+                </button>
+
+                <button class="btn btn-outline-success btn-sm quick-stock" data-symbol="TSLA">
+
+                    TSLA
+
+                </button>
+
+                <button class="btn btn-outline-success btn-sm quick-stock" data-symbol="NVDA">
+
+                    NVDA
+
+                </button>
+
+                <button class="btn btn-outline-success btn-sm quick-stock" data-symbol="GOOGL">
+
+                    GOOGL
+
+                </button>
+
+                <button class="btn btn-outline-success btn-sm quick-stock" data-symbol="RELIANCE.NS">
+
+                    RELIANCE (NSE)
+
+                </button>
+
+                <button class="btn btn-outline-success btn-sm quick-stock" data-symbol="TCS.NS">
+
+                    TCS (NSE)
+
+                </button>
+
+                <button class="btn btn-outline-success btn-sm quick-stock" data-symbol="INFY.NS">
+
+                    INFY (NSE)
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================
+                    Company Information
+        =========================================== -->
+
+        <div class="row mt-5">
+
+            <div class="col-lg-6">
+
+                <div class="info-card">
+
+                    <h3>
+
+                        Company Information
+
+                    </h3>
+
+                    <hr>
+
+                    <table class="table table-dark table-borderless">
+
+                        <tr>
+
+                            <td>Company</td>
+
+                            <td id="company-name">
+
+                                --
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Sector</td>
+
+                            <td id="sector">
+
+                                --
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Industry</td>
+
+                            <td id="industry">
+
+                                --
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Country</td>
+
+                            <td id="country">
+
+                                --
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Website</td>
+
+                            <td id="website">
+
+                                --
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="info-card">
+
+                    <h3>
+
+                        Live Market Data
+
+                    </h3>
+
+                    <hr>
+
+                    <table class="table table-dark table-borderless">
+
+                        <tr>
+
+                            <td>Current Price</td>
+
+                            <td id="current-price">
+
+                                --
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Open</td>
+
+                            <td id="open-price">
+
+                                --
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>High</td>
+
+                            <td id="high-price">
+
+                                --
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Low</td>
+
+                            <td id="low-price">
+
+                                --
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Volume</td>
+
+                            <td id="volume">
+
+                                --
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================
+                    Historical Chart
+        =========================================== -->
+
+        <div class="chart-card mt-5">
+
+            <h3>
+
+                Historical Price Chart
+
+            </h3>
+
+            <hr>
+
+            <div id="history-chart">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

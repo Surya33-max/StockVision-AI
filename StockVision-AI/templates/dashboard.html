@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="dashboard">
+
+    <div class="container">
+
+        <!-- ============================= -->
+        <!-- Dashboard Header -->
+        <!-- ============================= -->
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>
+
+                    Market Dashboard
+
+                </h1>
+
+                <p>
+
+                    Welcome to StockVision AI Analytics Platform
+
+                </p>
+
+            </div>
+
+            <div class="d-flex gap-2">
+
+                <form id="dashboard-symbol-form" class="d-flex gap-2">
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="dashboard-symbol"
+                        placeholder="e.g. AAPL or RELIANCE.NS"
+                        style="min-width: 220px;">
+
+                    <button type="submit" class="btn btn-outline-success">
+                        Load
+                    </button>
+
+                </form>
+
+                <a href="/search"
+                   class="btn btn-success">
+
+                    Search Stock
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- ============================= -->
+        <!-- KPI Cards -->
+        <!-- ============================= -->
+
+        <div class="row g-4 mt-2">
+
+            <div class="col-lg-3">
+
+                <div class="dashboard-card">
+
+                    <h6>
+
+                        Current Price
+
+                    </h6>
+
+                    <h2 id="current-price">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="dashboard-card">
+
+                    <h6>
+
+                        Day High
+
+                    </h6>
+
+                    <h2 id="day-high">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="dashboard-card">
+
+                    <h6>
+
+                        Day Low
+
+                    </h6>
+
+                    <h2 id="day-low">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="dashboard-card">
+
+                    <h6>
+
+                        Volume
+
+                    </h6>
+
+                    <h2 id="volume">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ============================= -->
+        <!-- Price Chart -->
+        <!-- ============================= -->
+
+        <div class="chart-card mt-5">
+
+            <div class="chart-header">
+
+                <h3>
+
+                    Stock Price Trend
+
+                </h3>
+
+            </div>
+
+            <div id="price-chart">
+
+            </div>
+
+        </div>
+
+        <!-- ============================= -->
+        <!-- Bottom Cards -->
+        <!-- ============================= -->
+
+        <div class="row mt-5">
+
+            <div class="col-lg-6">
+
+                <div class="dashboard-card large-card">
+
+                    <h4>
+
+                        AI Prediction
+
+                    </h4>
+
+                    <hr>
+
+                    <h2 id="prediction">
+
+                        Coming Soon
+
+                    </h2>
+
+                    <p>
+
+                        Machine Learning prediction module
+                        will appear here.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="dashboard-card large-card">
+
+                    <h4>
+
+                        Market Summary
+
+                    </h4>
+
+                    <hr>
+
+                    <ul class="market-list">
+
+                        <li>
+
+                            Market Status :
+                            <strong>Open</strong>
+
+                        </li>
+
+                        <li>
+
+                            Selected Stock :
+                            <strong>AAPL</strong>
+
+                        </li>
+
+                        <li>
+
+                            Data Source :
+                            <strong>Yahoo Finance</strong>
+
+                        </li>
+
+                        <li>
+
+                            Last Updated :
+                            <strong id="update-time">
+
+                                --
+
+                            </strong>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<div class="glass-card p-4">
+
+    <h4 class="mb-3">
+
+        Latest Market News
+
+    </h4>
+
+    <div id="news-feed">
+
+        Loading...
+
+    </div>
+
+</div>
+<!-- ===========================================
+        MARKET HEATMAP
+=========================================== -->
+
+<section class="mt-5">
+
+    <div class="glass-card p-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h3>
+
+                Market Heatmap
+
+            </h3>
+
+            <small>
+
+                Top Market Movers
+
+            </small>
+
+        </div>
+
+        <div id="market-heatmap"
+
+             class="heatmap-grid">
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

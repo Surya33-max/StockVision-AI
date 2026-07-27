@@ -1,0 +1,373 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="prediction-page">
+
+    <div class="container">
+
+        <!-- ==========================================
+                    Header
+        =========================================== -->
+
+        <div class="text-center mb-5">
+
+            <h1 class="page-title">
+
+                AI Stock Price Prediction
+
+            </h1>
+
+            <p class="page-subtitle">
+
+                Predict future stock prices using Machine Learning models.
+
+            </p>
+
+        </div>
+
+        <!-- ==========================================
+                    Prediction Form
+        =========================================== -->
+
+        <div class="prediction-card">
+
+            <form id="prediction-form">
+
+                <div class="row g-4">
+
+                    <!-- Stock Symbol -->
+
+                    <div class="col-lg-4">
+
+                        <label class="form-label">
+
+                            Stock Symbol
+
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="symbol"
+                            placeholder="AAPL">
+
+                    </div>
+
+                    <!-- Model -->
+
+                    <div class="col-lg-4">
+
+                        <label class="form-label">
+
+                            ML Model
+
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="model">
+
+                            <option value="linear">
+
+                                Linear Regression
+
+                            </option>
+
+                            <option value="random_forest">
+
+                                Random Forest
+
+                            </option>
+
+                            <option value="xgboost">
+
+                                XGBoost
+
+                            </option>
+
+                            <option value="lstm">
+
+                                LSTM (Coming Soon)
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Days -->
+
+                    <div class="col-lg-4">
+
+                        <label class="form-label">
+
+                            Prediction Days
+
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="days">
+
+                            <option value="7">
+
+                                Next 7 Days
+
+                            </option>
+
+                            <option value="15">
+
+                                Next 15 Days
+
+                            </option>
+
+                            <option value="30">
+
+                                Next 30 Days
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-4">
+
+                    <button
+                        type="submit"
+                        class="btn btn-success btn-lg">
+
+                        <i class="fas fa-robot me-2"></i>
+
+                        Generate Prediction
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- ==========================================
+                    Prediction Summary
+        =========================================== -->
+
+        <div class="row mt-5">
+
+            <div class="col-lg-3">
+
+                <div class="prediction-stat">
+
+                    <h6>
+
+                        Current Price
+
+                    </h6>
+
+                    <h3 id="current-price">
+
+                        --
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="prediction-stat">
+
+                    <h6>
+
+                        Predicted Price
+
+                    </h6>
+
+                    <h3 id="predicted-price">
+
+                        --
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="prediction-stat">
+
+                    <h6>
+
+                        Expected Change
+
+                    </h6>
+
+                    <h3 id="expected-change">
+
+                        --
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="prediction-stat">
+
+                    <h6>
+
+                        Confidence
+
+                    </h6>
+
+                    <h3 id="predicted-confidence">
+
+                        --
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================
+                    Prediction Chart
+        =========================================== -->
+
+        <div class="chart-card mt-5">
+
+            <h3>
+
+                Actual vs Predicted Price
+
+            </h3>
+
+            <hr>
+
+            <div id="prediction-chart">
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================
+                    Prediction Details
+        =========================================== -->
+
+        <div class="prediction-card mt-5">
+
+            <h3>
+
+                AI Analysis
+
+            </h3>
+
+            <hr>
+
+            <div id="prediction-summary">
+
+                <p>
+
+                    Run a prediction to view AI-generated market insights.
+
+                </p>
+
+            </div>
+
+            <div class="mt-4">
+
+                <button
+                    class="btn btn-outline-success"
+                    id="download-report">
+
+                    <i class="fas fa-download me-2"></i>
+
+                    Download Prediction Report
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div class="glass-card p-4 mt-4">
+
+    <h4 class="mb-4">
+
+        AI Recommendation
+
+    </h4>
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <h2 id="signal">
+
+                --
+
+            </h2>
+
+            <small>Signal</small>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <h2 id="confidence">
+
+                --
+
+            </h2>
+
+            <small>Confidence</small>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <h2 id="trend">
+
+                --
+
+            </h2>
+
+            <small>Trend</small>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <h2 id="risk">
+
+                --
+
+            </h2>
+
+            <small>Risk</small>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

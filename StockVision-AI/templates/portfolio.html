@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="portfolio-page">
+
+    <div class="container">
+
+        <!-- ==========================================
+                    Header
+        =========================================== -->
+
+        <div class="text-center mb-5">
+
+            <h1 class="page-title">
+
+                Portfolio Manager
+
+            </h1>
+
+            <p class="page-subtitle">
+
+                Monitor your investments, allocation and portfolio performance.
+
+            </p>
+
+        </div>
+
+        <!-- ==========================================
+                    Portfolio Summary
+        =========================================== -->
+
+        <div class="row g-4">
+
+            <div class="col-lg-3">
+
+                <div class="portfolio-card">
+
+                    <h6>Total Investment</h6>
+
+                    <h2 id="investment">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="portfolio-card">
+
+                    <h6>Current Value</h6>
+
+                    <h2 id="current-value">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="portfolio-card">
+
+                    <h6>Total Profit/Loss</h6>
+
+                    <h2 id="profit-loss">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="portfolio-card">
+
+                    <h6>Portfolio Return</h6>
+
+                    <h2 id="portfolio-return">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================
+                    Add Stock
+        =========================================== -->
+
+        <div class="portfolio-form mt-5">
+
+            <h3>
+
+                Add Investment
+
+            </h3>
+
+            <hr>
+
+            <form id="portfolio-form">
+
+                <div class="row g-3">
+
+                    <div class="col-lg-3">
+
+                        <input
+                        class="form-control"
+                        placeholder="Stock Symbol"
+                        id="stock">
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <input
+                        class="form-control"
+                        placeholder="Shares"
+                        id="shares"
+                        type="number">
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <input
+                        class="form-control"
+                        placeholder="Buy Price"
+                        id="buy-price"
+                        type="number">
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <button
+                        class="btn btn-success w-100">
+
+                            Add to Portfolio
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- ==========================================
+                    Holdings
+        =========================================== -->
+
+        <div class="portfolio-form mt-5">
+
+            <h3>
+
+                Portfolio Holdings
+
+            </h3>
+
+            <hr>
+
+            <div class="table-responsive">
+
+                <table class="table table-dark table-hover">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Symbol</th>
+
+                            <th>Shares</th>
+
+                            <th>Buy Price</th>
+
+                            <th>Current Price</th>
+
+                            <th>P/L</th>
+
+                            <th>Return %</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="portfolio-table">
+
+                        <tr>
+
+                            <td colspan="6"
+                                class="text-center">
+
+                                No investments yet.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================
+                    Allocation Chart
+        =========================================== -->
+
+        <div class="chart-card mt-5">
+
+            <h3>
+
+                Portfolio Allocation
+
+            </h3>
+
+            <hr>
+
+            <div id="allocation-chart">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<input id="portfolio-symbol"
+       class="form-control">
+
+<input id="portfolio-shares"
+       class="form-control">
+
+<input id="portfolio-price"
+       class="form-control">
+
+<button
+onclick="addPortfolio()"
+class="btn btn-success">
+
+Add Position
+
+</button>
+
+{% endblock %}

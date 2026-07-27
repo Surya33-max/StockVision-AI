@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="analytics-page">
+
+    <div class="container">
+
+        <!-- ==========================================
+                    Header
+        =========================================== -->
+
+        <div class="text-center mb-5">
+
+            <h1 class="page-title">
+
+                Stock Analytics
+
+            </h1>
+
+            <p class="page-subtitle">
+
+                Technical indicators, trend analysis, and risk metrics.
+
+            </p>
+
+        </div>
+
+        <!-- ==========================================
+                    Indicator Cards
+        =========================================== -->
+
+        <div class="row g-4">
+
+            <div class="col-lg-3">
+
+                <div class="analytics-card">
+
+                    <h6>SMA (20)</h6>
+
+                    <h2 id="sma20">--</h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="analytics-card">
+
+                    <h6>EMA (20)</h6>
+
+                    <h2 id="ema20">--</h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="analytics-card">
+
+                    <h6>RSI</h6>
+
+                    <h2 id="rsi">--</h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="analytics-card">
+
+                    <h6>MACD</h6>
+
+                    <h2 id="macd">--</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================
+                    Price Chart
+        =========================================== -->
+
+        <div class="chart-card mt-5">
+
+            <h3>
+
+                Price & Moving Averages
+
+            </h3>
+
+            <hr>
+
+            <div id="analytics-chart">
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================
+                    Risk Metrics
+        =========================================== -->
+
+        <div class="row mt-5">
+
+            <div class="col-lg-4">
+
+                <div class="analytics-card">
+
+                    <h5>
+
+                        Daily Return
+
+                    </h5>
+
+                    <h2 id="daily-return">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="analytics-card">
+
+                    <h5>
+
+                        Volatility
+
+                    </h5>
+
+                    <h2 id="volatility">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="analytics-card">
+
+                    <h5>
+
+                        Risk Level
+
+                    </h5>
+
+                    <h2 id="risk-level">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================
+                    Technical Summary
+        =========================================== -->
+
+        <div class="analytics-card mt-5">
+
+            <h3>
+
+                Technical Analysis Summary
+
+            </h3>
+
+            <hr>
+
+            <div id="analysis-summary">
+
+                <p>
+
+                    Select a stock to generate technical analysis.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

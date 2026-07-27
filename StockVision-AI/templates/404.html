@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="error-page">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="error-card text-center">
+
+                    <!-- ======================================
+                            Error Icon
+                    ======================================= -->
+
+                    <i class="fas fa-search error-icon"></i>
+
+                    <!-- ======================================
+                            Error Code
+                    ======================================= -->
+
+                    <h1 class="error-code">
+
+                        404
+
+                    </h1>
+
+                    <!-- ======================================
+                            Error Title
+                    ======================================= -->
+
+                    <h2 class="mb-4">
+
+                        Page Not Found
+
+                    </h2>
+
+                    <!-- ======================================
+                            Description
+                    ======================================= -->
+
+                    <p class="error-text">
+
+                        Sorry, the page you're looking for
+                        doesn't exist or has been moved.
+
+                    </p>
+
+                    <!-- ======================================
+                            Actions
+                    ======================================= -->
+
+                    <div class="mt-5">
+
+                        <a href="/"
+
+                           class="btn btn-success btn-lg me-3">
+
+                            <i class="fas fa-home me-2"></i>
+
+                            Go Home
+
+                        </a>
+
+                        <button
+
+                            class="btn btn-outline-light btn-lg"
+
+                            onclick="history.back()">
+
+                            <i class="fas fa-arrow-left me-2"></i>
+
+                            Go Back
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
