@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: stockvision-ai
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
