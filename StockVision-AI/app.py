@@ -1,9 +1,7 @@
 """
-=====================================================
 StockVision AI
 Main Flask Application
 Author: Surya
-=====================================================
 """
 from flask import Flask
 from config import Config
